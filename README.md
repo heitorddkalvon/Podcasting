@@ -1,2 +1,3 @@
-# Podcasting
-Podcasting is the name of the game!
+# SPA
+
+Repositório com códigos do projeto Filmes da disciplina APMD da FIAP

@@ -1,58 +1,45 @@
-import React from "react";
-import Image from 'next/image';
-import "../../src/app/globals.css";
+import CardFilme from '@/components/CardFilme'
+import Title from '@/components/Title'
 
-export const LandingPage = () => {
-  return (
-    <div className="landing-page">
-      <div className="overlap-wrapper">
-        <div className="overlap">
-          <div className="balls">
-            <div className="overlap-group">
-              <img className="ellipse" alt="Ellipse" src="ellipse-3-2.svg" />
-              <div className="div" />
-              <div className="ellipse-2" />
-            </div>
-          </div>
-          <div className="overlap-group-wrapper">
-            <div className="overlap-2">
-              <img className="img" alt="Ellipse" src="ellipse-3.svg" />
-              <div className="ellipse-3" />
-              <div className="ellipse-4" />
-            </div>
-          </div>
-          <div className="div-wrapper">
-            <div className="overlap-3">
-              <img className="ellipse-5" alt="Ellipse" src="image.svg" />
-              <div className="ellipse-6" />
-              <div className="ellipse-7" />
-            </div>
-          </div>
-          <div className="text">
-            <div className="overlap-4">
-              <div className="text-wrapper">Think and Cast</div>
-              <p className="p">Find a Podcast just for you</p>
-            </div>
-          </div>
-          <button className="button">
-            <div className="overlap-5">
-              <div className="text-wrapper-2">Join Now</div>
-            </div>
-          </button>
-          <img className="landing-page-girl" alt="Landing page girl" src="landing-page-girl-1.png" />
-          <div className="nav">
-            <div className="nav-buttuns">
-              <div className="text-wrapper-3">About us</div>
-              <div className="overlap-group-2">
-                <div className="text-wrapper-4">Contact</div>
-                <div className="text-wrapper-5">Facebook</div>
-              </div>
-              <div className="text-wrapper-6">Twitter</div>
-            </div>
-            <img className="logo" alt="Logo" src="logo.png" />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+export default function Home() {
+  const filmes = [
+    {
+      titulo: "Megatubarão 2",
+      nota: 6.2,
+      poster: "https://www.themoviedb.org/t/p/w220_and_h330_face/8tBhAn6qVRQzf5yvEcxjgPMgTkw.jpg"
+    },
+    {
+      titulo: "Barbie",
+      nota: 7.5,
+      poster: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/yRRuLt7sMBEQkHsd1S3KaaofZn7.jpg"
+    }
+  ]
+
+  return ( //JSX
+    <>
+      <nav className="bg-slate-900 p-4">
+        <ul>
+          <li><a href="#"><h1 className="text-3xl font-bold">Fiap Filmes</h1></a></li>
+        </ul>
+        <ul>
+          <li><a href="#">favoritos</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">filmes</a></li>
+        </ul>
+        
+      </nav>
+
+     <Title>em alta</Title>
+
+      <section className='flex flex-wrap'>
+        {filmes.map(filme => <CardFilme filme={filme} /> )}
+      </section>
+
+     <Title>lançamentos</Title>
+     <Title>favoritos</Title>
+   
+    </>
+   
+  )
+}
