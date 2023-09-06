@@ -1,9 +1,15 @@
 import { useCallback } from "react";
-import Header from "../components/Header";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button as MuiButton } from "@mui/material";
+import { Button, Button as BsButton } from "react-bootstrap";
 
 const LandingPage = () => {
   const onButtonContainerClick = useCallback(() => {
     // Please sync "Sign Up" to the project
+  }, []);
+
+  const onAboutUsClick = useCallback(() => {
+    // Please sync "Feature" to the project
   }, []);
 
   return (
@@ -32,7 +38,7 @@ const LandingPage = () => {
         </div>
       </div>
       <div
-        className="absolute top-[722px] left-[1347px] w-[250px] h-[77px] cursor-pointer text-center text-5xl"
+        className="absolute top-[722px] left-[1347px] w-[250px] h-[77px] cursor-pointer"
         onClick={onButtonContainerClick}
       >
         <img
@@ -40,16 +46,55 @@ const LandingPage = () => {
           alt=""
           src="/rectangle-1.svg"
         />
-        <div className="absolute top-[2px] left-[5px] flex items-center justify-center w-[225px] h-[75px]">
+        <Button
+          className="w-[225px] absolute top-[2px] left-[5px]"
+          variant="primary"
+        >
           Join Now
-        </div>
+        </Button>
       </div>
       <img
         className="absolute top-[231px] left-[153px] w-[602px] h-[849px] object-cover"
         alt=""
         src="/landingpagegirl-1@2x.png"
       />
-      <Header />
+      <div className="absolute top-[0px] left-[0px] w-[1920px] h-20 text-[24px]">
+        <div className="absolute top-[0px] left-[0px] bg-darkslateblue-200 w-[1920px] h-20" />
+        <div className="absolute top-[23px] left-[1381px] w-[512px] h-[35px]">
+          <MuiButton
+            className="absolute top-[0px] left-[0px] cursor-pointer"
+            sx={{ width: 97 }}
+            variant="contained"
+            color="primary"
+            onClick={onAboutUsClick}
+          >
+            About us
+          </MuiButton>
+          <div className="absolute top-[0px] left-[135px] inline-block w-[133px] h-[35px]">
+            Contact
+          </div>
+          <BsButton
+            className="w-[103px] absolute top-[0px] left-[266px]"
+            variant="outline-primary"
+          >
+            Facebook
+          </BsButton>
+          <BsButton
+            className="w-[103px] absolute top-[0px] left-[409px]"
+            variant="outline-primary"
+            href="https://twitter.com/"
+          >
+            Twitter
+          </BsButton>
+        </div>
+        <div className="absolute top-[9px] left-[86px] w-[279px] h-[62px] text-[32px]">
+          <div className="absolute top-[1px] left-[0px] rounded-[50%] w-[60px] h-[60px]" />
+          <div className="absolute top-[0px] left-[68px] flex items-center w-[211px] h-[62px]">
+            PodCasting
+          </div>
+          <div className="absolute top-[13.51px] left-[11.43px] [background:linear-gradient(180deg,_#01eefd,_#4400b2)] w-[40.54px] h-[37.42px]" />
+        </div>
+      </div>
     </div>
   );
 };

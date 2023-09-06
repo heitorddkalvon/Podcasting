@@ -16,8 +16,6 @@ module.exports = {
       },
     },
     fontSize: {
-      "13xl": "32px",
-      "5xl": "24px",
       inherit: "inherit",
     },
   },

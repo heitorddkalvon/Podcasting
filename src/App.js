@@ -3,7 +3,7 @@ import {
   Route,
   useNavigationType,
   useLocation,
-} from "react-router-dom";
+} from react-router-dom;
 import LandingPage from "./pages/LandingPage";
 import { useEffect } from "react";
 
